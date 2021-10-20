@@ -29,209 +29,65 @@
       <a href="promotion.html">Promotion</a>
       <a href="checkbooking.html">Show My Bookings</a>
     </div>
-    <div id='bookingdetail'>
-      <div id="moviedetail">
-        <table id="movietable">
+    <div id="booking">
+      <img src='./promotion_img/img1.jfif'>
+      <h3>Movie Name</h3>
+      <form action='booking.php' method='POST'>
+        <table>
           <tr>
-            <td>
-        MOVIE NAME:
-      </td>
-      <td>
-        Cinderella
-        </td>
-      <td>
-        LOCATION:
-      </td>
-      <td>
-        Cinderella
-        </td>
+            <td>Select your date: </td>
+            <td><input type='date' name='bookeddate' id="bookeddate" placeholder="Select date"></td>
       </tr>
       <tr>
-        <td>
-        DATE:
-      </td>
-      <td>
-        Cinderella
-        </td>
-      <td>
-        TIME:
-      </td>
-      <td>
-        Cinderella
-        </td>
+        <td>Select your time: </td>
+        <td><select id='bookedtime' name='bookedtime'>
+          <option id='closesttonow'></option>
+          <option id='hour1'></option>
+          <option id='hour2'></option>
+          <option id='hour3'></option>
+        </select></td>
       </tr>
       </table>
-        </div>
-    <div class="theatre">
-      <div class="cinema-seats left">
-        <div class="cinema-row row-1">
-          <h1 class="rows"></h1>
-          <div class="columns">A</div>
-          <div class="columns">B</div>
-          <div class="columns">C</div>
-          <div class="columns">D</div>
-          <div class="columns">E</div>
-          <div class="columns">F</div>
-          <div class="columns">G</div>
-        </div>
-        <div class="cinema-row row-1">
-          <h1 class="rows">1</h1>
-          <div class="seat A1"></div>
-          <div class="seat B1"></div>
-          <div class="seat C1"></div>
-          <div class="seat D1"></div>
-          <div class="seat E1"></div>
-          <div class="seat F1"></div>
-          <div class="seat G1"></div>
-        </div>
-
-        <div class="cinema-row row-2">
-          <h1 class="rows">2</h1>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-
-        <div class="cinema-row row-3">
-          <h1 class="rows">3</h1>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-
-        <div class="cinema-row row-4">
-          <h1 class="rows">4</h1>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-
-        <div class="cinema-row row-5">
-          <h1 class="rows">5</h1>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-
-        <div class="cinema-row row-6">
-          <h1 class="rows">6</h1>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-
-        <div class="cinema-row row-7">
-          <h1 class="rows">7</h1>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-      </div>
-
-      <div class="cinema-seats right">
-        <div class="cinema-row row-1">
-          <h1 class="rows">8</h1>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-
-        <div class="cinema-row row-2">
-          <h1 class="rows">9</h1>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-
-        <div class="cinema-row row-3">
-          <h1 class="rows">10</h1>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-
-        <div class="cinema-row row-4">
-          <h1 class="rows">11</h1>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-
-        <div class="cinema-row row-5">
-          <h1 class="rows">12</h1>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-
-        <div class="cinema-row row-6">
-          <h1 class="rows">13</h1>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-
-        <div class="cinema-row row-7">
-          <h1 class="rows">14</h1>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-      </div>
+      </form>
     </div>
-  </div>
+<script>
+let getRoundedDate = (minutes, d=new Date()) => {
+
+let ms = 1000 * 60 * minutes; 
+let roundedDate = new Date(Math.round(d.getTime() / ms) * ms);
+
+return roundedDate;
+}
+
+var option1 = document.getElementById('closesttonow');
+var option2 = document.getElementById('hour1');
+var option3 = document.getElementById('hour2');
+var option4 = document.getElementById('hour3');
+
+var interval = 30 * 60 * 1000;
+var option1time = new Date(Math.ceil(new Date().getTime()/interval)* interval);
+var option2time = new Date();
+option2time.setHours(option1time.getHours() + 1);
+option2time = getRoundedDate(30,option2time);
+var option3time = new Date();
+option3time.setHours(option1time.getHours() + 2);
+option3time = getRoundedDate(30,option3time);
+var option4time = new Date();
+option4time.setHours(option1time.getHours() + 3);
+option4time = getRoundedDate(30,option4time);
+
+
+option1.innerHTML = option1time.toLocaleTimeString();
+option2.innerHTML = option2time.toLocaleTimeString();
+option3.innerHTML = option3time.toLocaleTimeString();
+option4.innerHTML = option4time.toLocaleTimeString();
+
+
+
+
+
+
+</script>    
   </body>
   <footer></footer>
 </html>
