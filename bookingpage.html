@@ -36,7 +36,7 @@
         <table>
           <tr>
             <td>Select your date: </td>
-            <td><input type='date' name='bookeddate' id="bookeddate" placeholder="Select date"></td>
+            <td><input type='date' name='bookeddate' id="bookeddate"></td>
       </tr>
       <tr>
         <td>Select your time: </td>
@@ -58,6 +58,8 @@ let roundedDate = new Date(Math.round(d.getTime() / ms) * ms);
 
 return roundedDate;
 }
+var defaultdate = document.getElementById('bookeddate').valueAsDate = new Date();
+
 
 var option1 = document.getElementById('closesttonow');
 var option2 = document.getElementById('hour1');
