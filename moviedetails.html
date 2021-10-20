@@ -2,17 +2,40 @@
 <html lang="en">
   <head>
     <title>HomePage</title>
-    <link rel = "stylesheet" href = 'background.css'>
+    <link rel="stylesheet" href="background.css" />
+    <style>
+      #moviedetail {
+        margin-left: 300px;
+      }
+      #moviewrapper img {
+        width: 280px;
+        height: 400px;
+      }
+    </style>
   </head>
   <body>
     <header>
-      <a href = "index.html"><img src="logo.jpg" alt="Logo"/></a>
+      <a href="index.html"><img src="logo.jpg" alt="Logo" /></a>
     </header>
     <div class="topnav">
       <a href="nowshowing.html">Now Showing</a>
       <a href="comingsoon.html">Coming Soon</a>
       <a href="promotion.html">Promotion</a>
       <a href="checkbooking.html">Show My Bookings</a>
+    </div>
+    <div id="moviewrapper">
+      <img src="./promotion_img/img1.jfif" style="float: left" />
+      <div id="moviedetail">
+        <h1 id="movietitle">MOVIE TITLE</h1>
+        <p>This movie is about .....</p>
+          <h2>Release Date: 6th September 2021</h2>
+          <h2>Casts:</h2>
+          <ul>
+            <li>Jackie Chen</li>
+            <li>Michael Jackson</li>
+          </ul>
+          <h2 id='rating'>Rating: PG18 </h2>
+
     </div>
   </body>
   <footer></footer>
