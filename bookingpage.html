@@ -5,6 +5,18 @@
     <link rel = "stylesheet" href = 'background.css'>
     <link rel = "stylesheet" href = 'seat.css'>
   </head>
+  <style>
+    #bookingdetail{
+      width:80%;
+      align-items:center;
+    }
+    #movietable{
+      margin:auto;
+    }
+    #movietable td{
+      width:30%;
+    }
+  </style>
   <body>
     <header>
       <a href = "index.html"><img src="logo.jpg" alt="Logo"/></a>
@@ -17,6 +29,39 @@
       <a href="promotion.html">Promotion</a>
       <a href="checkbooking.html">Show My Bookings</a>
     </div>
+    <div id='bookingdetail'>
+      <div id="moviedetail">
+        <table id="movietable">
+          <tr>
+            <td>
+        MOVIE NAME:
+      </td>
+      <td>
+        Cinderella
+        </td>
+      <td>
+        LOCATION:
+      </td>
+      <td>
+        Cinderella
+        </td>
+      </tr>
+      <tr>
+        <td>
+        DATE:
+      </td>
+      <td>
+        Cinderella
+        </td>
+      <td>
+        TIME:
+      </td>
+      <td>
+        Cinderella
+        </td>
+      </tr>
+      </table>
+        </div>
     <div class="theatre">
       <div class="cinema-seats left">
         <div class="cinema-row row-1">
@@ -186,10 +231,7 @@
         </div>
       </div>
     </div>
-    <div>
-      <h1 class="booked"></h1>
-      <h1 class="seatsbooked"></h1>
-    </div>
+  </div>
   </body>
   <footer></footer>
 </html>
