@@ -111,6 +111,18 @@ p.text span{
       <form action='booking.php' method='POST'>
         <table>
           <tr>
+            <td>Your Name: </td>
+            <td><input type="text" name="name" id="name"></td>
+</tr>
+<tr>
+            <td>Your Email: </td>
+            <td><input type="email" name="email" id="email"></td>
+</tr>
+<tr>
+            <td>Your Phone Number: </td>
+            <td><input type="tel" name="phonenum" id="phonenum"></td>
+</tr>
+          <tr>
             <td>Select your date: </td>
             <td><input type='date' name='bookeddate' id="bookeddate"></td>
       </tr>
@@ -123,7 +135,7 @@ p.text span{
           <option id='hour3'></option>
         </select></td>
       </tr>
-      
+      <tr>
       <td>Select your seat: </td>
       <td>
         <div class="container">
@@ -190,7 +202,13 @@ p.text span{
           </div>
         </div>
       </td>
+</tr>
+<tr>
+  <td></td>
+  <td><input type="submit" value="Book"></td>
+</tr>
       </table>
+
       <p class="text">You have selected <span id="count">0</span> Seats for a price of $<span id="total">0</span></p>
       </form>
     </div>
