@@ -61,6 +61,9 @@ mysqli_close($conn);
     .seat:nth-of-type(2) {
   margin-right: 18px;
 }
+.seat.occupied{
+  background-color: #fff;
+}
 .seat:not(.occupied):hover {
   cursor:pointer;
   transform:scale(1.2);
@@ -226,7 +229,7 @@ p.text span{
 
 
       container.addEventListener("click", function(e){
-        if(e.target.classList.contains("seat")){
+        if(e.target.classList.contains("seat") && !e.target.classList.contains("occupied")){
           e.target.classList.toggle("selected");
           updateCount();
         }
@@ -273,7 +276,7 @@ option4.innerHTML = option4time.toLocaleTimeString();
 
 
 
-</script   
+</script>   
   </body>
   <footer></footer>
 </html>
