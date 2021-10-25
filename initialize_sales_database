@@ -14,10 +14,12 @@ if (!$conn) {
 // // sql to create table
 $sql = "CREATE TABLE Movie_sales(\n"
     . " ID INT PRIMARY KEY AUTO_INCREMENT,\n"
-    . " CONSTRAINT Movie_ID FOREIGN KEY (ID)\n"
-    . " REFERENCES Movie(ID),\n"
-    . " Date DATE NOT NULL,\n"
-    . " Time TIME NOT NULL,\n"
+    . " Name VARCHAR(50) NOT NULL,\n"
+    . " Email VARCHAR(50) NOT NULL,\n"
+    . " Phone VARCHAR(50) NOT NULL,\n"
+    . " Movie INT NOT NULL,\n"
+    . " Date VARCHAR(50) NOT NULL\n"
+    . " Time VARCHAR(50) NOT NULL\n"
     . " Seat VARCHAR(50) NOT NULL\n"
     . " )";
 
