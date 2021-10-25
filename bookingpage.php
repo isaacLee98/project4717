@@ -28,6 +28,40 @@ $Rating = $row['Rating'];
 
 mysqli_close($conn);
 ?>
+<?php
+
+function updateoccupieddetail(){
+$servername = "localhost";
+$username = "f32ee";
+$password = "f32ee";
+$dbname = "f32ee";
+
+
+$ID = $_GET['submit_button'];
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+// if(isset($_GET['movie_id'])) {
+//   echo $_GET['movie_id'];
+//  }
+
+$sql = "SELECT Date,Time,Seat FROM Movie_sales WHERE ID = $ID";
+
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$date = $row["Date"];
+$time = $row["Time"];
+$seat = $row["Seat"];
+
+$occupied_details = array($date, $time,$seat);
+mysqli_close($conn);
+return $seat;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -124,7 +158,7 @@ p.text span{
 </tr>
           <tr>
             <td>Select your date: </td>
-            <td><input type='date' name='bookeddate' id="bookeddate"></td>
+            <td><input type='date' name='bookeddate' id="bookeddate" onchange='updateseats()'></td>
       </tr>
       <tr>
         <td>Select your time: </td>
@@ -217,8 +251,17 @@ p.text span{
       var seats = document.querySelectorAll(".row .seat");
       var count = document.getElementById("count");
       var total = document.getElementById("total");
- 
+
+    //check for occupied
+    var occupieddate = "<?php echo $date ?>";
+    var occupiedtime = "<?php echo $time ?>";
+      var occupiedseats = new Array(<?php echo $seat; ?>); 
       populateUI();
+
+      function updateseats(){
+        var occupieddetails = "<?=updateoccupieddetail();?>";
+        console.log(occupieddetails);
+      }
 
 
       //Update Number of Selected Seats and Total Price
@@ -234,12 +277,11 @@ p.text span{
         localStorage.setItem("selectedSeats", JSON.stringify(seatsIndex));
       }
 
-      function populateUI(){
-        selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
-        if(selectedSeats !== null && selectedSeats.length > 0){
+      function populateUI(){        
+        if(occupiedseats !== null && occupiedseats.length > 0){
           seats.forEach(function(seat,index){
-            if(selectedSeats.indexOf(index) != -1) {
-              seat.classList.add("selected");
+            if(occupiedseats.indexOf(index) != -1) {
+              seat.classList.add("occupied");
             }
           })
         }
