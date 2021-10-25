@@ -14,7 +14,7 @@ if (!$conn) {
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 
-$sql = "SELECT * FROM Movie_sales WHERE Email = '$email'";
+$sql = "SELECT * FROM Movie_sales ORDER BY ID DESC LIMIT 1'";
 
 if (mysqli_query($conn, $sql)){
     $result = $conn->query($sql);
@@ -75,7 +75,7 @@ mysqli_close($conn);
       <a href="promotion.html">Promotion</a>
       <a href="checkbooking.html">Show My Bookings</a>
     </div>
-    <h1><strong>Your Booking</strong></h1>
+    <h1><strong>Thank you for Booking!</strong></h1>
     <div class = "movie_poster">
       <table class = "table">
       </table>
