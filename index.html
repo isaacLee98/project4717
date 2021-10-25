@@ -5,6 +5,18 @@
     <link rel="stylesheet" href="background.css" />
     <link rel="stylesheet" href="index.css" />
     <script type="text/javascript" src="index.js"></script>
+    <style>
+      .table{width: 100%;}
+      .table td {text-align: center;
+           padding: 15px;}
+      .movie_img {
+      background:none;
+      border:none;
+      color:#FFF;
+      font-family:Verdana, Geneva, sans-serif;
+      cursor:pointer;
+    }
+    </style>
   </head>
   <body>
     <header>
@@ -21,15 +33,11 @@
     </div>
     <div class="slide_show">
       <div class="mySlides fade" , style="display: block">
-        <img src="promotion_img\img1.jfif" style="width: 100%" />
+        <a href = 'nowshowing.html'><img src="promotion_img\img4.jfif" style="width: 100%" /></a>
       </div>
 
       <div class="mySlides fade">
-        <img src="promotion_img\img2.jfif" style="width: 100%" />
-      </div>
-
-      <div class="mySlides fade">
-        <img src="promotion_img\img3.jfif" style="width: 100%" />
+        <a href = 'nowshowing.html'><img src="promotion_img\img1.jfif" style="width: 100%" /></a>
       </div>
 
       <!-- Next and previous buttons -->
@@ -41,65 +49,24 @@
     <div style="text-align: center">
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
     </div>
     <br />
-    <div class="movie_poster">
-      <table class="table">
-        <tr>
-          <td>
-            <img
-              src="movie_img/sample.img"
-              alt="photo of title and logo"
-              width="200"
-              height="300"
-            />
-          </td>
-          <td>
-            <img
-              src="movie_img/sample.img"
-              alt="photo of title and logo"
-              width="200"
-              height="300"
-            />
-          </td>
-          <td>
-            <img
-              src="movie_img/sample.img"
-              alt="photo of title and logo"
-              width="200"
-              height="300"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="movie_img/sample.img"
-              alt="photo of title and logo"
-              width="200"
-              height="300"
-            />
-          </td>
-          <td>
-            <img
-              src="movie_img/sample.img"
-              alt="photo of title and logo"
-              width="200"
-              height="300"
-            />
-          </td>
-          <td>
-            <img
-              src="movie_img/sample.img"
-              alt="photo of title and logo"
-              width="200"
-              height="300"
-            />
-          </td>
-        </tr>
-      </table>
-    </div>
+    <div class = "movie_poster">
+      <form method="get" action="moviedetails.php">
+        <table class = "table">
+          <tr>
+            <td><button type = 'submit' value = '1' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Iron_Man_3_poster.jpg" alt = "photo of title and logo" width="200" height="300"></button></td>
+            <td><button type = 'submit' value = '2' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Captain_America_Civil_War_poster.jpg" alt = "photo of title and logo" width="200" height="300"></button></td>
+            <td><button type = 'submit' value = '3' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Ant-Man_poster.jpg" alt = "photo of title and logo" width="200" height="300"></button></td>
+          </tr>
+          <tr>
+            <td><button type = 'submit' value = '4' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Spider-Man_Homecoming_poster.jpg" alt = "photo of title and logo" width="200" height="300"></button></td>
+            <td><button type = 'submit' value = '5' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Black_Panther_poster.jpg" alt = "photo of title and logo" width="200" height="300"></button></td>
+            <td><button type = 'submit' value = '6' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Doctor_Strange_poster.jpg" alt = "photo of title and logo" width="200" height="300"></button></td>
+          </tr>
+        </table>
+      </form>
+    </div>        
   </body>
   <footer></footer>
 </html>
