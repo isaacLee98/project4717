@@ -13,26 +13,33 @@ if (!$conn) {
 // if(isset($_GET['movie_id'])) {
 //   echo $_GET['movie_id'];
 //  }
-$ID = $_GET['submit_button'];
+$ID = $_POST['submit_button'];
+$ID = (int)$ID;
 $name = $_POST['name'];
+
 $email = $_POST['email'];
+
 $phonenum = $_POST['phonenum'];
 $phonenum = (string)$phonenum;
+
 $date = $_POST['bookeddate'];
 $date = (string)$date;
+
 $time = $_POST['bookedtime'];
 $time = (string)$time;
+
 $seat = $_POST['bookedseat'];
-echo $seat;
+$seat = join(",",array($seat));
 
-// $sql = "INSERT INTO Movie_sales(Name,Email,Phone,Movie,Date,Time,Seat) VALUES($name,$email,$phonenum,$ID,$date,$time,$seat)";
 
-// if (mysqli_query($conn, $sql)){
-//   echo"success";
-// }
-// else{
-//     echo 'Failed';
-// }
+$sql = "INSERT INTO Movie_sales(Name,Email,Phone,Movie,Date,Time,Seat) VALUES('$name','$email','$phonenum',$ID,'$date','$time','$seat')";
+
+if (mysqli_query($conn, $sql)){
+  echo "success";
+}
+else{
+    echo mysqli_error($conn);
+}
 
 
 mysqli_close($conn);

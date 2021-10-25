@@ -238,8 +238,8 @@ p.text span{
       </td>
 </tr>
 <tr>
-  <td><input style="display:none" name="bookedseat" id="seat"></td>
-  <td><input type="submit" value="Book" onsubmit="updateseat();"></td>
+  <td><input type ='text' style="display:none" name="bookedseat" id="bookedseat"></td>
+  <td><button type="submit" name="submit_button" value=<?= $ID ?>>Book</td>
 </tr>
       </table>
 
@@ -258,14 +258,6 @@ p.text span{
       var occupiedseats = new Array(<?php echo $seat; ?>); 
       populateUI();
 
-      function updateseat(){
-        document.getElementById("bookedseat").value = localStorage.getItem("selectedSeats");
-      }
-
-      function updateseats(){
-        var occupieddetails = "<?=updateoccupieddetail();?>";
-        console.log(occupieddetails);
-      }
 
 
       //Update Number of Selected Seats and Total Price
@@ -273,11 +265,14 @@ p.text span{
         selectedSeats = container.querySelectorAll(".row .seat.selected");
         count.textContent = selectedSeats.length;
         total.textContent = selectedSeats.length * 10;
+        var bookedseat = document.getElementById('bookedseat');
         console.log(selectedSeats);
         seatsIndex = [...selectedSeats].map(function(seat){
           return [...seats].indexOf(seat);
         });
         console.log(seatsIndex);
+        bookedseat.value = seatsIndex;
+        console.log(bookedseat.value);
         localStorage.setItem("selectedSeats", JSON.stringify(seatsIndex));
       }
 
