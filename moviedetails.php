@@ -61,10 +61,10 @@ mysqli_close($conn);
       <div id="moviedetail">
         <form method = 'get' action = 'bookingpage.php'>
           <h1 id="movietitle"><?= $Name ?></h1>
-            <h2>Length: <?= $Length ?></h2>
-            <h2>Language: <?= $Language ?></h2>
-            <h2>Casts: <?= $Casting ?></h2>
-            <h2>Rating: <?= $Rating ?></h2>
+            <h3>Length: <b><?= $Length ?></b></h3>
+            <h3>Language: <b><?= $Language ?></b></h3>
+            <h3>Casts: <b><?= $Casting ?></b></h3>
+            <h3>Rating: <b><?= $Rating ?></b></h3>
             <button type = 'submit' value = <?= $ID ?> name = 'submit_button'>Book Ticket</button>
         </form>
     </div>
