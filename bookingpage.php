@@ -238,8 +238,8 @@ p.text span{
       </td>
 </tr>
 <tr>
-  <td></td>
-  <td><input type="submit" value="Book"></td>
+  <td><input style="display:none" name="bookedseat" id="seat"></td>
+  <td><input type="submit" value="Book" onsubmit="updateseat();"></td>
 </tr>
       </table>
 
@@ -257,6 +257,10 @@ p.text span{
     var occupiedtime = "<?php echo $time ?>";
       var occupiedseats = new Array(<?php echo $seat; ?>); 
       populateUI();
+
+      function updateseat(){
+        document.getElementById("bookedseat").value = localStorage.getItem("selectedSeats");
+      }
 
       function updateseats(){
         var occupieddetails = "<?=updateoccupieddetail();?>";
