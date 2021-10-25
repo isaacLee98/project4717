@@ -1,3 +1,34 @@
+<?php
+$servername = "localhost";
+$username = "f32ee";
+$password = "f32ee";
+$dbname = "f32ee";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+// if(isset($_GET['movie_id'])) {
+//   echo $_GET['movie_id'];
+//  }
+$ID = $_GET['submit_button'];
+
+$sql = "SELECT * FROM Movie WHERE ID = $ID";
+
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$Name = $row['Name'];
+$Image_path = $row['Image_path'];
+$Length = $row['Length'];
+$Language = $row['Language'];
+$Casting = $row['Casting'];
+$Rating = $row['Rating'];
+
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -70,9 +101,10 @@ p.text span{
       <a href="promotion.html">Promotion</a>
       <a href="checkbooking.html">Show My Bookings</a>
     </div>
+    <br>
     <div id="booking">
-      <img src='./promotion_img/img1.jfif'>
-      <h3>Movie Name</h3>
+      <img src = <?= $Image_path ?> width="200" height="300">
+      <h3><?= $Name ?></h3>
       <form action='booking.php' method='POST'>
         <table>
           <tr>
