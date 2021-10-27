@@ -41,15 +41,17 @@ mysqli_close($conn);
     <link rel = "stylesheet" href = 'seat.css'>
   </head>
   <style>
-    #bookingdetail{
-      width:80%;
-      align-items:center;
+    #booking img{
+      float:left;
+      width: 280px;
+      height: 400px;
     }
-    #movietable{
-      margin:auto;
+    #bookingtable{
+      padding-left:30px;
     }
-    #movietable td{
-      width:30%;
+
+    #movietitle{
+      text-align:center;
     }
     .seat {
       background-color: #444451;
@@ -113,9 +115,12 @@ p.text span{
     <br>
     <div id="booking">
       <img src = <?= $Image_path ?> width="200" height="300">
-      <h3><?= $Name ?></h3>
+
       <form action='booking.php' method='POST'>
-        <table>
+        <table id="bookingtable">
+          <tr>
+            <td id="movietitle" colspan="2"><h3><?= $Name ?></h3></td>
+          </tr>
           <tr>
             <td>Your Name: </td>
             <td><input type="text" name="name" id="name"></td>
