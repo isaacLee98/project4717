@@ -22,6 +22,7 @@ $time = (string)$time;
 $sql = "SELECT seat from Movie_sales WHERE Movie = $ID and Date = '$date' and Time = '$time'";
 
 if (mysqli_query($conn, $sql)){
+
   $result = $conn->query($sql);
   $num_result = $result->num_rows;
   $occupied_seats = [];
@@ -66,17 +67,43 @@ $seat = $_POST['bookedseat'];
 $seat = join(",",array($seat));
 
 
-
-
 $sql = "INSERT INTO Movie_sales(Name,Email,Phone,Movie,Date,Time,Seat) VALUES('$name','$email','$phonenum',$ID,'$date','$time','$seat')";
 
-if (mysqli_query($conn, $sql)){
-  echo "success";
-}
-else{
+$sql2 = "SELECT GROUP_CONCAT(Seat) as 'invalidseats' from Movie_sales where Date = '$date' and Time = '$time'";
+
+if (mysqli_query($conn, $sql2)){
+  $result = $conn->query($sql2);
+  $row = $result->fetch_assoc();
+  $invalidseatstring = $row['invalidseats'];  
+  $invalidseatArray = explode(",",$invalidseatstring);
+  $bookedseatArray = explode(",",$seat);
+  foreach($bookedseatArray as &$bookedseat){  
+    if(in_array($bookedseat,$invalidseatArray)){
+      echo '<script type="text/javascript">';
+      echo 'alert("Please check if seats are available by clicking \"Check Available Seats \"");';
+      echo 'window.history.go(-1);';
+      echo '</script>';
+      return;
+    }
+  }  
+  if(mysqli_query($conn,$sql)){
+    header("Location: receipt.php");
+    exit();
+  }
+
+  else{
     echo mysqli_error($conn);
+  }
+
+  }
+  
+else{
+  echo mysqli_error($conn);
+} 
+
+
 }
-}
+
 
 mysqli_close($conn);
 ?>

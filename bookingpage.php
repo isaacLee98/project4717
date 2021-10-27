@@ -252,10 +252,18 @@ p.text span{
         return true;
       }
   }
+  function validateBookedSeat(){
+    var bookedseat = document.getElementById('bookedseat').value;
+    if(bookedseat == ""){
+      alert("Please select the seat(s) you want to book");
+      return false
+    }
+    return true;
 
+  }
 
     function validateForm(){
-      return validateName() && validateEmail() && validatePhone() && validateDate() && validateTime();
+      return validateName() && validateEmail() && validatePhone() && validateDate() && validateTime() && validateBookedSeat();
 
     }
   </script>

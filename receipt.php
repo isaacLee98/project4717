@@ -14,7 +14,7 @@ if (!$conn) {
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 
-$sql = "SELECT * FROM Movie_sales ORDER BY ID DESC LIMIT 1'";
+$sql = "SELECT * FROM Movie_sales ORDER BY ID DESC LIMIT 1";
 
 if (mysqli_query($conn, $sql)){
     $result = $conn->query($sql);
