@@ -135,25 +135,25 @@ p.text span{
       <tr>
         <td>Select your time: </td>
         <td><select id='bookedtime' name='bookedtime'>
-        <option id='8am' value="8:00AM">8:00 AM</option>
-        <option id='9am' value="9:00AM">9:00 AM</option>
-        <option id='10am' value="10:00AM">10:00 AM</option>
-        <option id='11am' value="11:00AM">11:00 AM</option>
-          <option id='12pm' value="12:00PM">12:00 PM</option>
-          <option id='1pm' value="1:00PM">1:00 PM</option>
-          <option id='2pm'value="2:00PM">2:00 PM</option>
-          <option id='3pm'value="3:00PM">3:00 PM</option>
-          <option id='4pm' value="4:00PM">4:00 PM</option>
-          <option id='5pm' value="5:00PM">5:00 PM</option>
-          <option id='6pm'value="6:00PM">6:00 PM</option>
-          <option id='7pm'value="7:00PM">7:00 PM</option>
-          <option id='8pm' value="8:00PM">8:00 PM</option>
-          <option id='9pm' value="9:00PM">9:00 PM</option>
-          <option id='10pm'value="10:00PM">10:00 PM</option>
-          <option id='11pm'value="11:00PM">11:00 PM</option>
-          <option id='12am' value="12:00AM">12:00 AM</option>
-          <option id='1am' value="1:00AM">1:00 AM</option>
-          <option id='2am'value="2:00AM">2:00 AM</option>
+        <option id='8am' value="8:00:00">8:00 AM</option>
+        <option id='9am' value="9:00:00">9:00 AM</option>
+        <option id='10am' value="10:00:00">10:00 AM</option>
+        <option id='11am' value="11:00:00">11:00 AM</option>
+          <option id='12pm' value="12:00:00">12:00 PM</option>
+          <option id='1pm' value="13:00:00">1:00 PM</option>
+          <option id='2pm'value="14:00:00">2:00 PM</option>
+          <option id='3pm'value="15:00:00">3:00 PM</option>
+          <option id='4pm' value="16:00:00">4:00 PM</option>
+          <option id='5pm' value="17:00:00">5:00 PM</option>
+          <option id='6pm'value="18:00:00">6:00 PM</option>
+          <option id='7pm'value="19:00:00">7:00 PM</option>
+          <option id='8pm' value="20:00:00">8:00 PM</option>
+          <option id='9pm' value="21:00:00">9:00 PM</option>
+          <option id='10pm'value="22:00:00">10:00 PM</option>
+          <option id='11pm'value="23:00:00">11:00 PM</option>
+          <option id='12am' value="00:00:00">12:00 AM</option>
+          <option id='1am' value="1:00:00">1:00 AM</option>
+          <option id='2am'value="2:00:00">2:00 AM</option>
         </select></td>
       </tr>
       <tr>
@@ -190,26 +190,74 @@ p.text span{
   }
 
   function validateName(){
-
+    var name = document.getElementById("name").value;
+    if(name == ""){
+      alert("Please enter a name!");
+      return false;
+    }
+    return true;
   }
 
   function validateEmail(){
-
-  }
+    var email = document.getElementById("email").value;
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    
+    if(email == ""){
+      alert("Please provide your email!");
+      return false
+    }
+    else{
+      if(!re.test(String(email).toLowerCase())){
+        alert("invalid email format!");
+        return false;
+      }
+      return true;
+    }
+    }
 
   function validatePhone(){
+    var phonenumber = document.getElementById("phonenum").value;
+    const re = /^\d{8}$/;
+    if(phonenumber == ""){
+      alert("Please provide your phone number!");
+      return false;
+    }
+    else{
+      if(!re.test(phonenumber)){
+        alert("Provide phone number (SG) without country code!");
+        return false;
+      }
+      return true;
+
+    }
+
 
   }
 
   function validateTime(){
-    
+      var bookedtime = document.getElementById("bookedtime").value;
+      var bookeddate = document.getElementById('bookeddate').value;
+      var [hours, minutes,seconds] = bookedtime.split(":");
+      var todaydate = new Date();
+      bookeddatetime = new Date(bookeddate);
+      bookeddatetime.setHours(+hours); 
+      bookeddatetime.setMinutes(minutes); 
+      bookeddatetime.setSeconds(seconds);
+
+      if(bookeddatetime <= todaydate){
+        alert("Cannot book past time!")
+        return false;
+      }
+      else{
+        return true;
+      }
   }
 
 
     function validateForm(){
-      return validateDate() && validateName() && validateEmail() && validatePhone() && validateTime();
-    }
+      return validateName() && validateEmail() && validatePhone() && validateDate() && validateTime();
 
+    }
   </script>
 </tr>
       <tr>
