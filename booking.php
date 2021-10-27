@@ -37,7 +37,9 @@ if (mysqli_query($conn, $sql)){
   
   //output occupied_seats to javascript 
   $_SESSION['occupied_seats'] = $occupied_seats;
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
+  echo '<script type="text/javascript">';
+  echo 'window.history.go(-1);';
+  echo '</script>';
 
 }
 else{
