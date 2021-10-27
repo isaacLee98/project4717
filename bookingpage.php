@@ -38,7 +38,6 @@ mysqli_close($conn);
   <head>
     <title>HomePage</title>
     <link rel = "stylesheet" href = 'background.css'>
-    <link rel = "stylesheet" href = 'seat.css'>
   </head>
   <style>
     #booking img{
