@@ -189,6 +189,26 @@ p.text span{
     }
   }
 
+  function validateName(){
+
+  }
+
+  function validateEmail(){
+
+  }
+
+  function validatePhone(){
+
+  }
+
+  function validateTime(){
+    
+  }
+
+
+    function validateForm(){
+      return validateDate() && validateName() && validateEmail() && validatePhone() && validateTime();
+    }
 
   </script>
 </tr>
@@ -262,7 +282,7 @@ p.text span{
 </tr>
 <tr>
   <td><input type ='text' style="display:none" name="bookedseat" id="bookedseat"></td>
-  <td><button type="submit" name="submit_button" value=<?= $ID ?>>Book</td>
+  <td><button type="submit" name="submit_button" onclick="return validateForm()" value=<?= $ID ?>>Book</td>
 </tr>
       </table>
 
