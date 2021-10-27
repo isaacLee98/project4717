@@ -11,14 +11,17 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$email = $_POST['email'];
-$phone = $_POST['phone'];
 
 $sql = "SELECT * FROM Movie_sales ORDER BY ID DESC LIMIT 1";
 
 if (mysqli_query($conn, $sql)){
     $result = $conn->query($sql);
-    $num_result = $result->num_rows;
+    $row = $result->fetch_assoc();
+    $movie_id = $row['Movie'];
+    $sql2 = "SELECT * FROM Movie WHERE ID = $movie_id";
+    $result2 = $conn->query($sql2);
+    $row2 = $result2->fetch_assoc();
+    $movie = $row2['Name'];
     echo "<style>";
     echo "table,th,td { border: 1px solid white; }";
     echo "</style>";
@@ -29,22 +32,14 @@ if (mysqli_query($conn, $sql)){
     echo "<th> Time </th>";
     echo "<th> Seat </th>";
     echo "</tr>";
-    for ($i = 0; $i<$num_result; $i++){
-        $row = $result->fetch_assoc();
-        if ($row['Phone'] == $phone){
-            $movie_id = $row['Movie'];
-            $sql2 = "SELECT * FROM Movie WHERE ID = $movie_id";
-            $result2 = $conn->query($sql2);
-            $row2 = $result2->fetch_assoc();
-            $movie = $row2['Name'];
-            echo "<tr>";
-            echo "<td>".$movie."</td>";
-            echo "<td>".$row['Date']."</td>";
-            echo "<td>".$row['Time']."</td>";
-            echo "<td>".$row['Seat']."</td>"; 
-            echo "</tr>";
-        }
-    }}
+    echo "<tr>";
+    echo "<td>".$movie."</td>";
+    echo "<td>".$row['Date']."</td>";
+    echo "<td>".$row['Time']."</td>";
+    echo "<td>".$row['Seat']."</td>"; 
+    echo "</tr>";
+        
+    }
     else{
         echo mysqli_error($conn);
     }
