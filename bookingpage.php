@@ -159,8 +159,38 @@ p.text span{
       <tr>
         <td></td>
         <td>
-      <button type='submit' name="update_button" value=<?= $ID ?>>Check Available Seats</button>
+      <button type='submit' name="update_button" onclick="return validateDate();"value=<?= $ID ?>>Check Available Seats</button>
 </td>
+<script>
+    function dateInPast(firstDate, secondDate) {
+      if(firstDate.setHours(0,0,0,0) < secondDate.setHours(0,0,0,0)){
+        return true;
+      }
+      return false;
+    }
+
+  function validateDate(){
+    //check if date is filled
+    var bookeddate = document.getElementById('bookeddate').value;
+    datevalue = new Date(bookeddate);
+    var todayDate = new Date();
+
+    //check if date is entered
+    if(!Date.parse(bookeddate)){
+      alert("Please enter a valid date!");
+      return false;
+    }    
+    else if(dateInPast(datevalue,todayDate)){
+      alert("Cannot book for past dates!");
+        return false;
+    }
+    else{
+    return true;
+    }
+  }
+
+
+  </script>
 </tr>
       <tr>
       <td>Select your seat: </td>
