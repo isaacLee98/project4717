@@ -3,6 +3,7 @@ $servername = "localhost";
 $username = "f32ee";
 $password = "f32ee";
 $dbname = "f32ee";
+session_start();
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -26,42 +27,11 @@ $Language = $row['Language'];
 $Casting = $row['Casting'];
 $Rating = $row['Rating'];
 
+
 mysqli_close($conn);
 ?>
-<?php
-
-function updateoccupieddetail(){
-$servername = "localhost";
-$username = "f32ee";
-$password = "f32ee";
-$dbname = "f32ee";
 
 
-$ID = $_GET['submit_button'];
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-// if(isset($_GET['movie_id'])) {
-//   echo $_GET['movie_id'];
-//  }
-
-$sql = "SELECT Date,Time,Seat FROM Movie_sales WHERE ID = $ID";
-
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
-$date = $row["Date"];
-$time = $row["Time"];
-$seat = $row["Seat"];
-
-$occupied_details = array($date, $time,$seat);
-mysqli_close($conn);
-return $seat;
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -114,7 +84,9 @@ return $seat;
     margin-bottom: 30px;
 }
 .screen {
-  background-color: #fff;
+  background-color: #123456;
+  text-align: center;
+  font-size: 40px;
   height: 70px;
   width: 100%;
   margin:15px 0;
@@ -158,22 +130,43 @@ p.text span{
 </tr>
           <tr>
             <td>Select your date: </td>
-            <td><input type='date' name='bookeddate' id="bookeddate" onchange='updateseats()'></td>
+            <td><input type='date' name='bookeddate' id="bookeddate"></td>
       </tr>
       <tr>
         <td>Select your time: </td>
         <td><select id='bookedtime' name='bookedtime'>
-          <option id='closesttonow'></option>
-          <option id='hour1'></option>
-          <option id='hour2'></option>
-          <option id='hour3'></option>
+        <option id='8am' value="8:00AM">8:00 AM</option>
+        <option id='9am' value="9:00AM">9:00 AM</option>
+        <option id='10am' value="10:00AM">10:00 AM</option>
+        <option id='11am' value="11:00AM">11:00 AM</option>
+          <option id='12pm' value="12:00PM">12:00 PM</option>
+          <option id='1pm' value="1:00PM">1:00 PM</option>
+          <option id='2pm'value="2:00PM">2:00 PM</option>
+          <option id='3pm'value="3:00PM">3:00 PM</option>
+          <option id='4pm' value="4:00PM">4:00 PM</option>
+          <option id='5pm' value="5:00PM">5:00 PM</option>
+          <option id='6pm'value="6:00PM">6:00 PM</option>
+          <option id='7pm'value="7:00PM">7:00 PM</option>
+          <option id='8pm' value="8:00PM">8:00 PM</option>
+          <option id='9pm' value="9:00PM">9:00 PM</option>
+          <option id='10pm'value="10:00PM">10:00 PM</option>
+          <option id='11pm'value="11:00PM">11:00 PM</option>
+          <option id='12am' value="12:00AM">12:00 AM</option>
+          <option id='1am' value="1:00AM">1:00 AM</option>
+          <option id='2am'value="2:00AM">2:00 AM</option>
         </select></td>
       </tr>
+      <tr>
+        <td></td>
+        <td>
+      <button type='submit' name="update_button" value=<?= $ID ?>>Check Available Seats</button>
+</td>
+</tr>
       <tr>
       <td>Select your seat: </td>
       <td>
         <div class="container">
-          <div class = "screen"></div>
+          <div class = "screen">SCREEN</div>
           <div class="row">
             <div class="seat"></div>
             <div class="seat"></div>
@@ -253,9 +246,12 @@ p.text span{
       var total = document.getElementById("total");
 
     //check for occupied
+    var occupiedseatstring = "<?php echo $_SESSION['occupied_seats']?>";
     var occupieddate = "<?php echo $date ?>";
     var occupiedtime = "<?php echo $time ?>";
-      var occupiedseats = new Array(<?php echo $seat; ?>); 
+      var occupiedseats = occupiedseatstring.split(","); 
+      occupiedseats = occupiedseats.map(string => parseInt(string));
+
       populateUI();
 
 
@@ -266,13 +262,10 @@ p.text span{
         count.textContent = selectedSeats.length;
         total.textContent = selectedSeats.length * 10;
         var bookedseat = document.getElementById('bookedseat');
-        console.log(selectedSeats);
         seatsIndex = [...selectedSeats].map(function(seat){
           return [...seats].indexOf(seat);
         });
-        console.log(seatsIndex);
         bookedseat.value = seatsIndex;
-        console.log(bookedseat.value);
         localStorage.setItem("selectedSeats", JSON.stringify(seatsIndex));
       }
 
@@ -295,8 +288,10 @@ p.text span{
       });
       updateCount();
       
+
+
       </script>
-<script>
+<!-- <script>
 let getRoundedDate = (minutes, d=new Date()) => {
 
 let ms = 1000 * 60 * minutes; 
@@ -335,7 +330,7 @@ option4.innerHTML = option4time.toLocaleTimeString();
 
 
 
-</script>   
+</script>    -->
   </body>
   <footer></footer>
 </html>
