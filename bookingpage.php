@@ -27,7 +27,7 @@ $Language = $row['Language'];
 $Casting = $row['Casting'];
 $Rating = $row['Rating'];
 
-
+session_destroy();
 mysqli_close($conn);
 ?>
 
