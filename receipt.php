@@ -45,6 +45,19 @@ if (mysqli_query($conn, $sql)){
     }
 
 mysqli_close($conn);
+
+$line1 = "Dear ".$row['Name'].",\n\n";
+$line2 = "Thank you for purchasing at SkyCinema, here are your booking details:\n";
+$line3 = "Movie: ".$movie."\n";
+$line4 = "Date: ".$row['Date']."\n";
+$line5 = "Time: ".$row['Time']."\n";
+$line6 = "Seat: ".$row['Seat']."\n\n";
+$line7 = "Please come to SkyCinema to enjoy the movie.\n\n";
+$line8 = "Regards,\nSkyCinema";
+
+$msg = $line1.$line2.$line3.$line4.$line5.$line6.$line7.$line8;
+$subject = "SkyCinema Booking Details";
+mail('f32ee@localhost', $subject, $msg);
 ?>
 
 <!DOCTYPE html>
