@@ -47,6 +47,7 @@ mysqli_close($conn);
     }
     #bookingtable{
       padding-left:30px;
+      font-family: "Helvetica Neue",Arial,sans-serif; font-size: 16px; font-weight: 300; line-height: 1.5625; margin-bottom: 15px;
     }
 
     #movietitle{
@@ -94,6 +95,12 @@ mysqli_close($conn);
   transform:rotatex(-45deg);
   box-shadow:0 3px 10px rgba(255,255,255,0.3);
 }
+
+
+p.text{
+  font-size:20px;
+}
+
 p.text span{
   color: #6feaf6
 }

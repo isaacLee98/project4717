@@ -42,6 +42,9 @@ mysqli_close($conn);
         width: 280px;
         height: 400px;
       }
+      #moviedetail h3{
+        font-family: "Helvetica Neue",Arial,sans-serif; font-size: 16px; font-weight: 300; line-height: 1.5625; margin-bottom: 15px;
+      }
     </style>
   </head>
   <body>
@@ -59,7 +62,7 @@ mysqli_close($conn);
       <div id="moviedetail">
         <form method = 'get' action = 'bookingpage.php'>
           <h1 id="movietitle"><?= $Name ?></h1>
-            <h3>Length: <b><?= $Length ?></b></h3>
+            <h3>Length: <b><?= $Length ?>mins</b></h3>
             <h3>Language: <b><?= $Language ?></b></h3>
             <h3>Casts: <b><?= $Casting ?></b></h3>
             <h3>Rating: <b><?= $Rating ?></b></h3>
