@@ -2,71 +2,77 @@
 <html lang="en">
   <head>
     <title>HomePage</title>
-    <link rel="stylesheet" href="background.css" />
-    <link rel="stylesheet" href="index.css" />
-    <script type="text/javascript" src="index.js"></script>
+    <link rel = "stylesheet" href = 'background.css'>
     <style>
-      .table{width: 100%;}
-      .table td {text-align: center;
-           padding: 15px;}
-      .movie_img {
-      background:none;
-      border:none;
-      color:#FFF;
-      font-family:Verdana, Geneva, sans-serif;
-      cursor:pointer;
-    }
+      .table{
+        width: 90%;
+        margin-left:auto;
+        margin-right:auto;
+      }
+      .table td {
+        width: 30%;
+        height:550px;
+
+        }
+        .movie_img{
+          display:block;
+          width:100%;
+          padding:0 0 0 0;
+          margin:0 0 0 0;
+          background-size: cover;
+          background-color:black;
+          border:none;
+        }
+
+      .movie_img img{
+        object-fit: cover;
+        width:100%;
+        height:550px;
+        background:none;
+        border:none;
+        cursor:pointer;
+      }
+
     </style>
   </head>
   <body>
     <header>
-      <div>
-        <a href="index.html"><img src="logo.jpg" alt="Logo" /></a>
-        <a href="login.html"><p id="login">Login/Sign Up</p></a>
-      </div>
+      <a href = "index.html"><img src="logo.jpg" alt="Logo"/></a>
+      <a href="login.html"><p id="login">Login/Sign Up</p></a>
+    </div>
     </header>
     <div class="topnav">
-      <a href="nowshowing.html">Now Showing</a>
+      <a href="index.html">Now Showing</a>
       <a href="comingsoon.html">Coming Soon</a>
       <a href="promotion.html">Promotion</a>
       <a href="checkbooking.html">Show My Bookings</a>
     </div>
-    <div class="slide_show">
-      <div class="mySlides fade" , style="display: block">
-        <a href = 'nowshowing.html'><img src="promotion_img\img4.jfif" style="width: 100%" /></a>
-      </div>
-
-      <div class="mySlides fade">
-        <a href = 'nowshowing.html'><img src="promotion_img\img1.jfif" style="width: 100%" /></a>
-      </div>
-
-      <!-- Next and previous buttons -->
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br />
-    <!-- The dots/circles -->
-    <div style="text-align: center">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-    </div>
-    <br />
     <div class = "movie_poster">
       <form method="get" action="moviedetails.php">
         <table class = "table">
           <tr>
-            <td><button type = 'submit' value = '1' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Iron_Man_3_poster.jpg" alt = "photo of title and logo" width="200" height="300"></button></td>
-            <td><button type = 'submit' value = '2' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Captain_America_Civil_War_poster.jpg" alt = "photo of title and logo" width="200" height="300"></button></td>
-            <td><button type = 'submit' value = '3' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Ant-Man_poster.jpg" alt = "photo of title and logo" width="200" height="300"></button></td>
+            <td><button type = 'submit' value = '1' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Iron_Man_3_poster.jpg" alt = "photo of title and logo" ></button></td>
+            <td><button type = 'submit' value = '2' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Captain_America_Civil_War_poster.jpg" alt = "photo of title and logo" ></button></td>
+            <td><button type = 'submit' value = '3' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Ant-Man_poster.jpg" alt = "photo of title and logo" ></button></td>
           </tr>
           <tr>
-            <td><button type = 'submit' value = '4' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Spider-Man_Homecoming_poster.jpg" alt = "photo of title and logo" width="200" height="300"></button></td>
-            <td><button type = 'submit' value = '5' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Black_Panther_poster.jpg" alt = "photo of title and logo" width="200" height="300"></button></td>
-            <td><button type = 'submit' value = '6' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Doctor_Strange_poster.jpg" alt = "photo of title and logo" width="200" height="300"></button></td>
+            <td><button type = 'submit' value = '4' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Spider-Man_Homecoming_poster.jpg" alt = "photo of title and logo" ></button></td>
+            <td><button type = 'submit' value = '5' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Black_Panther_poster.jpg" alt = "photo of title and logo" ></button></td>
+            <td><button type = 'submit' value = '6' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Doctor_Strange_poster.jpg" alt = "photo of title and logo" ></button></td>
+          </tr>
+          <tr>
+            <td><button type = 'submit' value = '7' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Avengers_Infinity_War_poster.jpg" alt = "photo of title and logo" ></button></td>
+            <td><button type = 'submit' value = '8' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Shang-Chi_and_the_Legend_of_the_Ten_Rings_poster.jpeg" alt = "photo of title and logo" ></button></td>
+            <td><button type = 'submit' value = '9' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Black_Widow_poster.jpg" alt = "photo of title and logo" ></button></td>
+          </tr>
+          <tr>
+            <td><button type = 'submit' value = '10' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Captain_America_The_Winter_Soldier_poster.jpg" alt = "photo of title and logo" ></button></td>
+            <td><button type = 'submit' value = '11' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Avengers_Endgame_poster.jpg" alt = "photo of title and logo" ></button></td>
+            <td><button type = 'submit' value = '12' class = 'movie_img' name = 'movie_id'><img src = "movie_img/Captain_Marvel_poster.jpg" alt = "photo of title and logo" ></button></td>
           </tr>
         </table>
       </form>
-    </div>        
+    </div>
   </body>
   <footer></footer>
 </html>
