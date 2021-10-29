@@ -66,8 +66,6 @@ mysqli_close($conn);
   <body>
     <header>
       <a href = "index.html"><img src="logo.jpg" alt="Logo"/></a>
-      <a href="login.html"><p id="login">Login/Sign Up</p></a>
-    </div>
     </header>
     <div class="topnav">
       <a href="index.html">Now Showing</a>
