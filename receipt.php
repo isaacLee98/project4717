@@ -83,8 +83,6 @@ mail('f32ee@localhost', $subject, $msg);
     </div>
     <h1><strong>Thank you for Booking!</strong></h1>
     <div class = "movie_poster">
-      <table class = "table">
-      </table>
     </div>
   </body>
   <footer></footer>

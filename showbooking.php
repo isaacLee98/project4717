@@ -75,8 +75,6 @@ mysqli_close($conn);
     </div>
     <h1><strong>Your Booking</strong></h1>
     <div class = "movie_poster">
-      <table class = "table">
-      </table>
     </div>
   </body>
   <footer></footer>
