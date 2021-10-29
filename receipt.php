@@ -51,7 +51,7 @@ $line2 = "Thank you for purchasing at SkyCinema, here are your booking details:\
 $line3 = "Movie: ".$movie."\n";
 $line4 = "Date: ".$row['Date']."\n";
 $line5 = "Time: ".$row['Time']."\n";
-$line6 = "Seat: ".$row['Seat']."\n\n";
+$line6 = "Seat(s): ".$row['Seat']."\n\n";
 $line7 = "Please come to SkyCinema to enjoy the movie.\n\n";
 $line8 = "Regards,\nSkyCinema";
 
