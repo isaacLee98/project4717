@@ -4,15 +4,20 @@
     <title>HomePage</title>
     <link rel="stylesheet" href="background.css" />
     <style>
-		.topnav > .active > a {
-					color: red;
-				}
-		.table {
-			padding-top: 80px;
-			margin-top: auto;
-			margin-left: auto;
-			margin-right: auto;
-		}
+      .topnav > .active > a {
+        color: red;
+      }
+      .table {
+        margin-top: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid;
+        border-radius: 25px;
+        padding: 60px;
+      }
+      .table h1 {
+        font-size: 20px;
+      }
     </style>
   </head>
   <body>
@@ -23,28 +28,34 @@
       <a href="index.html">Now Showing</a>
       <a href="comingsoon.html">Coming Soon</a>
       <a href="promotion.html">Promotion</a>
-      <a href="checkbooking.html", class = 'active'>Show My Bookings</a>
+      <a href="checkbooking.html" , class="active">Show My Bookings</a>
     </div>
     <div class="login-wrap">
       <div class="login-html">
-        <form method = 'post' action = 'showbooking.php'>
-			<table class = 'table' width = '400px' height = '100px'>
-				<tr>
-					<td><h1 font-weight = 'normal'>Email Address: </h1></td>
-					<td><input type='email' name='email' id="email" ></td>
-				</tr>
-				<tr>
-					<td><h1 font-weight = 'normal'>Phone Number: </h1></td>
-					<td><input type='text' name='phone' id="phone" ></td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center"><input type='submit' value='Check Booking' height = '30' width = '50'></td>
-				</tr>
-			</table>
-      </form>
+        <form method="post" action="showbooking.php">
+          <table class="table" width="400px" height="100px">
+            <tr>
+              <td><h1 font-weight="normal">Email Address:</h1></td>
+              <td><input type="email" name="email" id="email" /></td>
+            </tr>
+            <tr>
+              <td><h1 font-weight="normal">Phone Number:</h1></td>
+              <td><input type="text" name="phone" id="phone" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" align="center">
+                <input
+                  type="submit"
+                  value="Check Booking"
+                  height="30"
+                  width="50"
+                />
+              </td>
+            </tr>
+          </table>
+        </form>
       </div>
     </div>
-
   </body>
   <footer></footer>
 </html>
