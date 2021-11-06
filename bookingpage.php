@@ -406,46 +406,6 @@ p.text span{
 
 
       </script>
-<!-- <script>
-let getRoundedDate = (minutes, d=new Date()) => {
-
-let ms = 1000 * 60 * minutes; 
-let roundedDate = new Date(Math.round(d.getTime() / ms) * ms);
-
-return roundedDate;
-}
-var defaultdate = document.getElementById('bookeddate').valueAsDate = new Date();
-
-
-var option1 = document.getElementById('closesttonow');
-var option2 = document.getElementById('hour1');
-var option3 = document.getElementById('hour2');
-var option4 = document.getElementById('hour3');
-
-var interval = 30 * 60 * 1000;
-var option1time = new Date(Math.ceil(new Date().getTime()/interval)* interval);
-var option2time = new Date();
-option2time.setHours(option1time.getHours() + 1);
-option2time = getRoundedDate(30,option2time);
-var option3time = new Date();
-option3time.setHours(option1time.getHours() + 2);
-option3time = getRoundedDate(30,option3time);
-var option4time = new Date();
-option4time.setHours(option1time.getHours() + 3);
-option4time = getRoundedDate(30,option4time);
-
-
-option1.innerHTML = option1time.toLocaleTimeString();
-option2.innerHTML = option2time.toLocaleTimeString();
-option3.innerHTML = option3time.toLocaleTimeString();
-option4.innerHTML = option4time.toLocaleTimeString();
-
-
-
-
-
-
-</script>    -->
   </body>
   <footer></footer>
 </html>
