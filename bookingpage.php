@@ -168,7 +168,7 @@ p.text span{
       <tr>
         <td></td>
         <td>
-      <button type='submit' name="update_button" onclick="return validateDate();"value=<?= $ID ?>>Check Available Seats</button>
+      <button type='submit' name="update_button" onclick="return validateDateTime();"value=<?= $ID ?>>Check Available Seats</button>
 </td>
 <script>
     function dateInPast(firstDate, secondDate) {
@@ -176,6 +176,10 @@ p.text span{
         return true;
       }
       return false;
+    }
+
+    function validateDateTime(){
+      return validateDate() && validateTime();
     }
 
   function validateDate(){
